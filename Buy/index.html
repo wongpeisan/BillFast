@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link rel="stylesheet" href="Style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://kit.fontawesome.com/9623914e96.js" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      .buttonpress{
+        margin:auto; 
+        display:block; 
+        border-radius: 5px;
+        background-color:#023047;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .buttonpress:hover {
+      background-color:#219abc; 
+      }
+
+      .flex-container {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      margin: 10px 0px 0px 15px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      width:97.5%;
+      padding: 30px 30px;
+    }
+
+    .Cart-Items{
+      margin-top: 20px;
+      width: 90%;
+      height: 30%;
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    
+    .image-box{
+      width: 15%;
+      text-align: center;
+    }
+    
+    .about{
+      height: 100%;
+      text-align: left;
+      width: 500px;
+    }
+    
+    .title{
+      padding-top: 5px;
+      line-height: 10px;
+      font-size: 32px;
+      font-weight: 800;
+      color: #202020;
+    }
+    
+    .subtitle{
+      line-height: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #909090;
+    }
+
+    .prices{
+      height: 100%;
+      text-align: right;
+    }
+  
+    .amount{
+      padding-top: 20px;
+      font-size: 26px;
+      font-family: ‘Open Sans’;
+      font-weight: 800;
+      color: #202020;
+    }
+  
+    .save{
+      padding-top: 5px;
+      font-size: 14px;
+      font-family: ‘Open Sans’;
+      font-weight: 600;
+      color: #1687d9;
+      cursor: pointer;
+    }
+  
+    .remove{
+      padding-top: 5px;
+      font-size: 14px;
+      font-family: ‘Open Sans’;
+      font-weight: 600;
+      color: #E44C4C;
+      cursor: pointer;
+    }
+
+    .counter{
+      width: 100px;
+      display:flex;
+      justify-content: space-between;
+      align-items: left;
+      margin-left: 10px;
+    }
+
+    .productbutton {
+      width: 40px;
+      height: 40px;
+      font-size: 30px;
+      background-color: green;
+      color: honeydew;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+
+}
+  
+/*apply hover effect to button tag*/
+  
+button:hover {
+    background-color: greenyellow;
+    color: grey;
+}
+    
+h2 {
+    color: black;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+  
+    </style>
+   
+  </head>
+
+  <body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <img class="circular--square" src="Profile_WPS.jpg" style="border-radius: 50%; width:30%; height:80%; margin-left: 10px; margin-top: 10px;"/>
+        <span  class="logo_name" style="margin-left:15px; font-size:medium;" >Wong Pei San</span>
+    </div>
+
+      <ul class="nav-links">
+        <li>
+          <a href="#" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Buy/Add on</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="BX fa-solid fa-cart-shopping"></i>
+            <span class="links_name">Cart</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span class="links_name">History</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li>
+
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Buy/Add on</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+
+    </nav>
+
+    <div class="home-content">
+      <div class="sales-boxes">
+        <div class="recent-sales box" style="width: 100%;">
+          <div class="title">Category</div>
+            
+                <div class="row" style="display: flex;">
+              
+                  <div class="column" style="  flex: 33.33%; padding: 5px;">
+                    <img src="societyfee.png" alt="societyfee" style="width:100%">
+                    <button class="buttonpress">Society Fee</button>
+                  </div>
+                  
+                  <div class="column" style="  flex: 33.33%; padding: 5px;">
+                    <img src="transportfee.png" alt="transportfee" style="width:100%">
+                    <button class="buttonpress">Transportation Fee</button>
+                  </div>   
+
+                  <div class="column" style="  flex: 33.33%; padding: 5px;">
+                    <img src="donation.png" alt="Donation" style="width:100%">
+                    <button class="buttonpress">Donation</button>
+                  </div>   
+
+                  <div class="column" style="  flex: 33.33%; padding: 5px;">
+                    <img src="uniform.png" alt="uniform" style="width:100%">
+                    <button class="buttonpress">Uniform</button>
+                  </div>   
+
+                  <div class="column" style="  flex: 33.33%; padding: 5px;">
+                    <img src="stationary.png" alt="stationary" style="width:100%">
+                    <button class="buttonpress">Stationary</button>
+                  </div>   
+
+
+                </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="title">Product</div>
+      <div>
+          <div class="Cart-Items">
+            <div class="image-box">
+              <img src="badmintonclub.png" style="height:120px"/>
+            </div>
+            
+            <div class="about">
+              <h1 class=”title”>Badminton Club Fee</h1>
+              <h3 class="subtitle">per month</h3>
+            </div>
+            <div class="counter">
+              <button class="productbutton">+</button>
+              <h2>1</h2>
+              <button class="productbutton">-</button>
+            </div>
+
+            <div class="prices">
+              <div class="amount">RM 5.00</div>
+              <div class="save"><u>Save for later</u></div>
+              <div class="remove"><u>Remove</u></div>
+            </div>
+          </div>
+
+            <div class="Cart-Items">
+              <div class="image-box">
+                <img src="busfee.png" style="height:120px"/>
+              </div>
+              
+              <div class="about">
+                <h1 class=”title”>Bus Fee</h1>
+                <h3 class="subtitle">per month</h3>
+              </div>
+              <div class="counter">
+                <button class="productbutton">+</button>
+                <h2>1</h2>
+                <button class="productbutton">-</button>
+              </div>
+
+              <div class="prices">
+                <div class="amount">RM 80.00</div>
+                <div class="save"><u>Save for later</u></div>
+                <div class="remove"><u>Remove</u></div>
+              </div>
+          
+            </div>
+
+            <div class="Cart-Items">
+              <div class="image-box">
+                <img src="donate.png" style="height:120px"/>
+              </div>
+              
+              <div class="about">
+                <h1 class=”title”>Donation for every needy</h1>
+                <h3 class="subtitle">Give a child three meals per day</h3>
+              </div>
+              <div class="counter">
+                <button class="productbutton" onclick="increment()">+</button>
+                <h2 id="counting">1</h2>
+                <button class="productbutton" onclick="decrement()">-</button>
+              </div>
+
+              <div class="prices">
+                <div class="amount">RM 5.00</div>
+                <div class="save"><u>Save for later</u></div>
+                <div class="remove"><u>Remove</u></div>
+              </div>
+          
+            </div>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+
+<!-- JavaScript code-->
+            //initialising a variable name data
+            var data = 0;
+  
+            //printing default value of data that is 0 in h2 tag
+            document.getElementById("counting").innerText = data;
+  
+            //creation of increment function
+            function increment() {
+                data = data + 1;
+                document.getElementById("counting").innerText = data;
+            }
+            //creation of decrement function
+            function decrement() {
+                data = data - 1;
+                document.getElementById("counting").innerText = data;
+            }
+ </script>
+
+</body>
+</html>
+
