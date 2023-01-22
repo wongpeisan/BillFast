@@ -228,11 +228,11 @@
                     <img src="img/donation.png" alt="Donation" style="width:100%">
                     <button class="buttonpress">Donation</button>
                   </div>   
-                  <div class="column"  style="flex: 33.33%; padding: 5px;">
+                  <div class="column" style="  flex: 33.33%; padding: 5px;">
                     <img src="img/uniform.png" alt="uniform" style="width:100%">
-                    <button class="buttonpress" style="background-color: #1687d9;">Uniform</button>
+                    <button class="buttonpress">Uniform</button>
                   </div>   
-                  <div class="column" style=" flex: 33.33%; padding: 5px;">
+                  <div class="column" style="  flex: 33.33%; padding: 5px;">
                     <img src="img/stationary.png" alt="stationary" style="width:100%">
                     <button class="buttonpress">Stationary</button>
                   </div>   
@@ -340,6 +340,37 @@
       </div>
     </div>
   </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+
+<!-- JavaScript code-->
+            //initialising a variable name data
+            var data = 0;
+  
+            //printing default value of data that is 0 in h2 tag
+            document.getElementById("counting").innerText = data;
+  
+            //creation of increment function
+            function increment() {
+                data = data + 1;
+                document.getElementById("counting").innerText = data;
+            }
+            //creation of decrement function
+            function decrement() {
+                data = data - 1;
+                document.getElementById("counting").innerText = data;
+            }
+ </script>
+
 </body>
 </html>
 
