@@ -1,0 +1,13 @@
+.button
+{
+    background: #023047;
+    color: white;
+}
+
+.button-hover:hover
+{
+    transition-duration: 100ms;
+    background: white;
+    color: #023047;
+    border-color: #023047;
+}
