@@ -13,6 +13,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+      .button
+    {
+      background: #023047 !important;
+      color: white !important;
+    }
+
+    .button-hover:hover
+    {
+      transition-duration: 100ms !important;
+      background: white !important;
+      color: #023047 !important;
+      border-color: #023047 !important;
+    }
+
+      .flex-container {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      margin: 10px 0px 0px 15px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      width:97.5%;
+      padding: 30px 30px;
+    }
+
+    .Cart-Items{
+      margin-top: 20px;
+      width: 90%;
+      height: 30%;
+      display: flex;
+      justify-content:flex-start;
+      
+    }
+    
+    .image-box{
+      width: 15%;
+      text-align: center;
+    }
+    
+    .about{
+      height: 100%;
+      text-align: left;
+      width: 500px;
+    }
+    
+    .title{
+      padding-top: 5px;
+      margin-bottom: 25px;
+      line-height: 10px;
+      font-size: 32px;
+      font-weight: 800;
+      color: #202020;
+    }
+
+    .subtitle{
+      line-height: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #909090;
+    }
+
+    .prices{
+      height: 100%;
+      text-align: right;
+    }
+  
+    .amount{
+      margin-top: 40px;
+      margin-left: 30px;
+      font-size: 26px;
+      font-family: ‘Open Sans’;
+      font-weight: 800;
+      color: #202020;
+    }
+  
+    .save{
+      padding-top: 5px;
+      font-size: 14px;
+      font-family: ‘Open Sans’;
+      font-weight: 600;
+      color: #1687d9;
+      cursor: pointer;
+    }
+  
+    .remove{
+      padding-top: 5px;
+      font-size: 14px;
+      font-family: ‘Open Sans’;
+      font-weight: 600;
+      color: #E44C4C;
+      cursor: pointer;
+    }
+
+    .counter{
+      width: 100px;
+      display:flex;
+      justify-content: space-between;
+      align-items: left;
+      margin-left: 10px;
+    }
+
+    .productbutton {
+      width: 40px;
+      height: 40px;
+      font-size: 30px;
+      background-color: green;
+      color: honeydew;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+
+}
+  
+/*apply hover effect to button tag*/
+  
+button:hover {
+    background-color: greenyellow;
+    color: grey;
+}
+    
+h2 {
+    color: black;
+    margin: 0 10px;
+    font-size: 20px;
+}
       .buttonpress{
         margin:auto; 
         display:block; 
@@ -234,7 +360,105 @@ h2 {
           </div>
         </div>
       </div>
-
+      <div class="flex-container">
+              <div class="title">Products</div>
+                  <div class="Cart-Items">
+                    <div class="image-box"><img src="img/skirt.png" style="height:120px"/></div>           
+                    <div class="about">
+                      <h1 class=”title”>Skirt</h1>
+                      <select name="ddl" width=300 STYLE="width: auto;height: 30px;">
+                        <option value='XS'>XS</option>
+                        <option value='S'>S</option>
+                        <option value='M'>M</option>
+                        <option value='L'>L</option>
+                        <option value='2XL'>2XL</option>
+                        <option value='3XL'>3XL</option>
+                        <option value='4XL'>4XL</option>
+                        <option value='' selected> Select a size </option>
+                      </select>
+                      <input type="number" id="quantity" placeholder="Qty" name="quantity" min="1" max="5" style="width: auto;height: 30px;"></input>
+                    </div>
+                    <div class="prices"> <div class="amount">RM 15.00</div></div>
+                    <div class="text-center"><button class="btn btn-sm px-3 mt-5 button-hover button" style="border-radius: 20px; margin-left: 50px;" type="submit">Add to cart</button></div>
+                  </div>
+      
+                  <div class="Cart-Items">
+                    <div class="image-box">
+                      <img src="img/blouse.png" style="height:120px"/>
+                    </div>
+                    <div class="about">
+                      <h1 class=”title”>Blouse</h1>
+                      <select name="ddl" width=300 STYLE="width: auto;height: 30px;">
+                        <option value='XS'>XS</option>
+                        <option value='S'>S</option>
+                        <option value='M'>M</option>
+                        <option value='L'>L</option>
+                        <option value='2XL'>2XL</option>
+                        <option value='3XL'>3XL</option>
+                        <option value='4XL'>4XL</option>
+                        <option value='' selected> Select a size </option>
+                        </select>
+                      <input type="number" id="quantity" placeholder="Qty" name="quantity" min="1" max="5" style="width: auto;height: 30px;"></input>
+                    </div>
+                   <div class="prices">
+                      <div class="amount">RM 10.00</div>
+                    </div>
+                    <div class="text-center">
+                      <button class="btn btn-sm px-3 mt-5 button-hover button" style="border-radius: 20px; margin-left: 50px;" type="submit">Add to cart</button>
+                    </div>
+                  </div>
+      
+                  <div class="Cart-Items">
+                    <div class="image-box">
+                      <img src="img/pants.png" style="height:120px"/>
+                    </div>
+                    <div class="about">
+                      <h1 class=”title”>Pants</h1>
+                      <select name="ddl" width=300 STYLE="width: auto;height: 30px;">
+                        <option value='XS'>XS</option>
+                        <option value='S'>S</option>
+                        <option value='M'>M</option>
+                        <option value='L'>L</option>
+                        <option value='2XL'>2XL</option>
+                        <option value='3XL'>3XL</option>
+                        <option value='4XL'>4XL</option>
+                        <option value='' selected> Select a size </option>
+                      </select>
+                    <input type="number" id="quantity" placeholder="Qty" name="quantity" min="1" max="5" style="width: auto;height: 30px;"></input>
+                    </div>
+                   <div class="prices">
+                      <div class="amount">RM 20.00</div>
+                    </div>
+                    <div class="text-center">
+                      <button class="btn btn-sm px-3 mt-5 button-hover button" style="border-radius: 20px; margin-left: 50px;" type="submit">Add to cart</button>
+                    </div>
+                  </div>
+      
+      <div class="Cart-Items">
+                    <div class="image-box">
+                      <img src="img/suit.png" style="height:120px"/>
+                    </div>
+                    <div class="about">
+                      <h1 class=”title”>Suit</h1>
+                      <select name="ddl" width=300 STYLE="width: auto;height: 30px;">
+                        <option value='XS'>XS</option>
+                        <option value='S'>S</option>
+                        <option value='M'>M</option>
+                        <option value='L'>L</option>
+                        <option value='2XL'>2XL</option>
+                        <option value='3XL'>3XL</option>
+                        <option value='4XL'>4XL</option>
+                        <option value='' selected> Select a size </option>
+                      </select>
+                      <input type="number" id="quantity" placeholder="Qty" name="quantity" min="1" max="5" style="width: auto;height: 30px;"></input>
+      
+                    </div>
+                   <div class="prices">
+                      <div class="amount">RM 30.00</div>
+                    </div>
+                    <div class="text-center">
+                      <button class="btn btn-sm px-3 mt-5 button-hover button" style="border-radius: 20px; margin-left: 50px;" type="submit">Add to cart</button>                    </div>
+                  </div>
     <!-- <div class="flex-container">
       <div class="title">Product</div>
       <div>
