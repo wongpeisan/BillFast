@@ -13,134 +13,235 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-      .buttonpress{
-        margin:auto; 
-        display:block; 
-        border-radius: 5px;
-        background-color:#023047;
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        cursor: pointer;
-        margin-top: 10px;
-      }
 
-      .buttonpress:hover {
-      background-color:#219abc; 
-      }
 
-      .flex-container {
-      display: flex;
-      flex-direction: column;
-      background-color: white;
-      margin: 10px 0px 0px 15px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      width:97.5%;
-      padding: 30px 30px;
-    }
-
-    .Cart-Items{
-      margin-top: 20px;
-      width: 90%;
-      height: 30%;
-      display: flex;
-      justify-content: space-between;
-      
-    }
-    
-    .image-box{
-      width: 15%;
-      text-align: center;
-    }
-    
-    .about{
-      height: 100%;
-      text-align: left;
-      width: 500px;
-    }
-    
-    .title{
-      padding-top: 5px;
-      line-height: 10px;
-      font-size: 32px;
-      font-weight: 800;
-      color: #202020;
-    }
-    
-    .subtitle{
-      line-height: 10px;
-      font-size: 18px;
-      font-weight: 600;
-      color: #909090;
-    }
-
-    .prices{
-      height: 100%;
-      text-align: right;
-    }
-  
-    .amount{
-      padding-top: 20px;
-      font-size: 26px;
-      font-family: ‘Open Sans’;
-      font-weight: 800;
-      color: #202020;
-    }
-  
-    .save{
-      padding-top: 5px;
-      font-size: 14px;
-      font-family: ‘Open Sans’;
-      font-weight: 600;
-      color: #1687d9;
-      cursor: pointer;
-    }
-  
-    .remove{
-      padding-top: 5px;
-      font-size: 14px;
-      font-family: ‘Open Sans’;
-      font-weight: 600;
-      color: #E44C4C;
-      cursor: pointer;
-    }
-
-    .counter{
-      width: 100px;
-      display:flex;
-      justify-content: space-between;
-      align-items: left;
-      margin-left: 10px;
-    }
-
-    .productbutton {
-      width: 40px;
-      height: 40px;
-      font-size: 30px;
-      background-color: green;
-      color: honeydew;
-      border-radius: 50%;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-
-}
-  
-/*apply hover effect to button tag*/
-  
-button:hover {
-    background-color: greenyellow;
-    color: grey;
-}
-    
-h2 {
-    color: black;
-    margin: 0 10px;
-    font-size: 20px;
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
+@font-face {
+    font-family: 'Shopper';
+    src: url('http://www.shopperfont.com/font/Shopper-Std.ttf');
+}
+
+.shopper {
+  text-transform: lowercase;
+  font: 2em 'Shopper', sans-serif;
+  line-height: 0.5em;
+  display: inline-block;
+}
+
+
+
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+p {
+  font-size: 1.5em;
+  color: #8a8a8a;
+}
+
+input {
+  border: 0.3em solid #bbc3c6;
+  padding: 0.5em 0.3em; 
+  font-size: 1.4em;
+  color: #8a8a8a;
+  text-align: center;
+}
+
+img {
+  max-width: 9em;
+  width: 100%;
+  overflow: hidden; 
+  margin-right: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 75em;
+  width: 95%;
+  margin: 40px auto;  
+  overflow: hidden;
+  position: relative;
   
+  border-radius: 0.6em;
+  box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
+}
+
+
+.cart {
+  margin: 2.5em;
+  overflow: hidden;
+}
+
+.cart.is-closed {
+  height: 0;
+  margin-top: -2.5em;
+}
+
+.table {
+  background: #ffffff;
+  border-radius: 0.6em;
+  overflow: hidden;
+  clear: both;
+  margin-bottom: 1.8em;
+}
+
+
+.layout-inline > * {
+  display: inline-block;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.th {
+  background: #219abc;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.tf {
+  background: #219abc;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 1.2em;  
+}
+
+.tf p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.col {
+  padding: 1em;
+  width: 12%;
+}
+
+.col-pro {
+  width: 44%;
+}
+
+.col-pro > * {
+  vertical-align: middle;
+}
+
+.col-qty {
+  text-align: center;
+  width: 17%;
+}
+
+.col-numeric p {
+  font: bold 1.5em helvetica;
+}
+
+.col-total p {
+  color: #12c8b1;
+}
+
+.tf .col {
+  width: 20%;
+}
+
+.row > div {
+  vertical-align: middle;
+}
+
+.row-bg2 {
+  background: #f7f7f7;
+}
+
+.visibility-cart {
+  position: absolute;
+  color: #fff;
+  top: 0.5em;
+  right: 0.5em;
+  font:  bold 2em arial;
+  border: 0.16em solid #fff;
+  border-radius: 2.5em;
+  padding: 0 0.22em 0 0.25em ;
+}
+
+.col-qty > * {
+  vertical-align: middle; 
+}
+
+.col-qty > input {
+  max-width: 2.6em;
+}
+
+
+a.qty {
+  width: 1em;
+  line-height: 1em;
+  border-radius: 2em;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  background: #43ace3;  
+  color: #fff;
+}
+
+a.qty:hover {
+  background: #3b9ac6;
+}
+
+.btn {
+  padding: 10px 30px;
+  border-radius: 0.3em;
+  font-size: 1.4em;
+  font-weight: bold;
+  background: #43ace3;
+  color: #fff;
+  box-shadow: 0 3px 0 rgba(59,154,198, 1)
+}
+
+.btn:hover {
+  box-shadow: 0 3px 0 rgba(59,154,198, 0)
+}
+
+.btn-update {
+  float: right;
+  margin: 0 0 1.5em 0;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and ( max-width: 755px) {
+  .container {
+    width: 98%;
+  }
+  
+  .col-pro {
+    width: 35%;
+  }
+  
+  .col-qty {
+    width: 22%;
+  }
+  
+  img {
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and ( max-width: 591px) {
+  
+}
     </style>
    
   </head>
@@ -154,7 +255,7 @@ h2 {
 
       <ul class="nav-links">
         <li>
-          <a href="#" class="active">
+          <a href="#" >
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -166,7 +267,7 @@ h2 {
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" class="active">
             <i class="BX fa-solid fa-cart-shopping"></i>
             <span class="links_name">Cart</span>
           </a>
@@ -206,113 +307,146 @@ h2 {
     </nav>
 
     <div class="home-content"></div>
+    <div class="container">
+        <div class="table">
+          
+          <div class="layout-inline row th">
+            <div class="col col-pro">Product</div>
+            <div class="col col-price align-center "> 
+              Price
+            </div>
+            <div class="col col-qty align-center">QTY</div>
+            <div class="col">VAT</div>
+            <div class="col">Total</div>
+          </div>
+          <div class="layout-inline row">
 
-    <div class="flex-container">
-      <div class="title">Product</div>
-      <div>
-          <div class="Cart-Items">
-            <div class="image-box">
-              <img src="img/badmintonclub.png" style="height:120px"/>
+            <div class="col col-pro layout-inline">
+              <img src="img/busfee.png" alt="busfee" />
+              <p>Bus fee</p>
             </div>
-            
-            <div class="about">
-              <h1 class=”title”>Badminton Club Fee</h1>
-              <h3 class="subtitle">per month</h3>
+            <div class="col col-price col-numeric align-center ">
+              <p>RM 30.00</p>
             </div>
-            <div class="counter">
-              <button class="productbutton">+</button>
-              <h2>1</h2>
-              <button class="productbutton">-</button>
+            <div class="col col-qty layout-inline">
+              <a href="#" class="qty qty-minus">-</a>
+                <input type="numeric" value="1" />
+              <a href="#" class="qty qty-plus">+</a>
             </div>
-
-            <div class="prices">
-              <div class="amount">RM 5.00</div>
-              <div class="save"><u>Save for later</u></div>
-              <div class="remove"><u>Remove</u></div>
+            <div class="col col-vat col-numeric">
+              <p>RM 30.00</p>
+            </div>
+            <div class="col col-total col-numeric">               
+              <p>RM 30.00</p>
             </div>
           </div>
 
-            <div class="Cart-Items">
-              <div class="image-box">
-                <img src="img/busfee.png" style="height:120px"/>
+              <div class="layout-inline row row-bg2">
+              <div class="col col-pro layout-inline">
+                <img src="img/outstandingbill.png" alt="kitten" />
+                <p>Outstanding bill</p>
               </div>
-              
-              <div class="about">
-                <h1 class=”title”>Bus Fee</h1>
-                <h3 class="subtitle">per month</h3>
+              <div class="col col-price col-numeric align-center ">
+                <p>RM 2,000</p>
               </div>
-              <div class="counter">
-                <button class="productbutton">+</button>
-                <h2>1</h2>
-                <button class="productbutton">-</button>
+              <div class="col col-qty  layout-inline">
+                <a href="#" class="qty qty-minus ">-</a>
+                  <input type="numeric" value="1" />
+                <a href="#" class="qty qty-plus">+</a>
               </div>
-
-              <div class="prices">
-                <div class="amount">RM 80.00</div>
-                <div class="save"><u>Save for later</u></div>
-                <div class="remove"><u>Remove</u></div>
+              <div class="col col-vat col-numeric">
+                <p>RM 2,000</p>
               </div>
-          
+              <div class="col col-total col-numeric">
+                <p>RM 2,000</p>
+              </div>      
             </div>
-
-            <div class="Cart-Items">
-              <div class="image-box">
-                <img src="img/donate.png" style="height:120px"/>
-              </div>
-              
-              <div class="about">
-                <h1 class=”title”>Donation for every needy</h1>
-                <h3 class="subtitle">Give a child three meals per day</h3>
-              </div>
-              <div class="counter">
-                <button class="productbutton" onclick="increment()">+</button>
-                <h2 id="counting">1</h2>
-                <button class="productbutton" onclick="decrement()">-</button>
-              </div>
-
-              <div class="prices">
-                <div class="amount">RM 5.00</div>
-                <div class="save"><u>Save for later</u></div>
-                <div class="remove"><u>Remove</u></div>
-              </div>
-          
-            </div>
-
         
+           <div class="tf">
+              <div class="row layout-inline">
+               <div class="col">
+                 <p>Total</p>
+               </div>
+               <div class="col"><p>RM 2030.00</p></div>
+             </div>
+           </div>         
       </div>
+        
+        <a href="#" class="btn btn-update">Pay Now</a>
+      
     </div>
-  </section>
-
-  <script>
-   let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".sidebarBtn");
-sidebarBtn.onclick = function() {
-  sidebar.classList.toggle("active");
-  if(sidebar.classList.contains("active")){
-  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
-}else
-  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-}
-
-<!-- JavaScript code-->
-            //initialising a variable name data
-            var data = 0;
-  
-            //printing default value of data that is 0 in h2 tag
-            document.getElementById("counting").innerText = data;
-  
-            //creation of increment function
-            function increment() {
-                data = data + 1;
-                document.getElementById("counting").innerText = data;
-            }
-            //creation of decrement function
-            function decrement() {
-                data = data - 1;
-                document.getElementById("counting").innerText = data;
-            }
- </script>
-
+      
+    </div>
 </body>
+<script>
+  $('.visibility-cart').on('click',function(){
+       
+       var $btn =  $(this);
+       var $cart = $('.cart');
+       console.log($btn);
+       
+       if ($btn.hasClass('is-open')) {
+          $btn.removeClass('is-open');
+          $btn.text('O')
+          $cart.removeClass('is-open');     
+          $cart.addClass('is-closed');
+          $btn.addClass('is-closed');
+       } else {
+          $btn.addClass('is-open');
+          $btn.text('X')
+          $cart.addClass('is-open');     
+          $cart.removeClass('is-closed');
+          $btn.removeClass('is-closed');
+       }
+     
+                       
+     });
+     
+       // SHOPPING CART PLUS OR MINUS
+       $('a.qty-minus').on('click', function(e) {
+         e.preventDefault();
+         var $this = $(this);
+         var $input = $this.closest('div').find('input');
+         var value = parseInt($input.val());
+         
+         if (value > 1) {
+           value = value - 1;
+         } else {
+           value = 0;
+         }
+         
+         $input.val(value);
+             
+       });
+     
+       $('a.qty-plus').on('click', function(e) {
+         e.preventDefault();
+         var $this = $(this);
+         var $input = $this.closest('div').find('input');
+         var value = parseInt($input.val());
+     
+         if (value < 100) {
+         value = value + 1;
+         } else {
+           value =100;
+         }
+     
+         $input.val(value);
+       });
+     
+     // RESTRICT INPUTS TO NUMBERS ONLY WITH A MIN OF 0 AND A MAX 100
+     $('input').on('blur', function(){
+     
+       var input = $(this);
+       var value = parseInt($(this).val());
+     
+         if (value < 0 || isNaN(value)) {
+           input.val(0);
+         } else if
+           (value > 100) {
+           input.val(100);
+         }
+     });
+</script>
 </html>
 
